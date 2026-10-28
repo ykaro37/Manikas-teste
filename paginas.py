@@ -160,7 +160,8 @@ SUGESTOES = [
     "Como melhorar minha execução do agachamento?",
 ]
 
-# Cores iguais às do tema (.streamlit/config.toml): cobalto #1F47D1, tinta #101C2C, giz #F4F6F8.
+# Funciona em tema claro e escuro: só o balão do usuário e o avatar têm cor fixa (cobalto com texto branco);
+# o resto usa transparência e herda a cor do texto do tema.
 ESTILO_CHAT = """
 <style>
 .block-container { max-width: 780px; }
@@ -170,7 +171,7 @@ ESTILO_CHAT = """
 
 /* Manikas: balão branco à esquerda, avatar em cobalto */
 .stApp [data-testid="stChatMessage"]:has([aria-label="Chat message from assistant"]) [data-testid="stChatMessageContent"] {
-    max-width: 92%; background: #FFFFFF; border: 1px solid #D5DCE6; border-radius: 18px 18px 18px 4px;
+    max-width: 92%; background: rgba(128, 128, 128, 0.12); border: 1px solid rgba(128, 128, 128, 0.30); border-radius: 18px 18px 18px 4px;
 }
 .stApp [data-testid="stChatMessageAvatarAssistant"] { background: #1F47D1 !important; color: #FFFFFF !important; }
 
@@ -183,7 +184,7 @@ ESTILO_CHAT = """
 .stApp [data-testid="stChatMessage"]:has([aria-label="Chat message from user"]) [data-testid="stChatMessageContent"] * { color: #FFFFFF !important; }
 
 /* Campo de mensagem */
-.stApp [data-testid="stChatInput"] { background: #FFFFFF; border: 1px solid #C5CEDB; border-radius: 14px; }
+.stApp [data-testid="stChatInput"] { border: 1px solid rgba(128, 128, 128, 0.45); border-radius: 14px; }
 .stApp [data-testid="stChatInput"]:focus-within { border-color: #1F47D1; box-shadow: 0 0 0 3px rgba(31, 71, 209, 0.15); }
 </style>
 """
